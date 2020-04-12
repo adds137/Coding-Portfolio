@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"model.enumeration","l":"BetType"},{"p":"model.interfaces","l":"Coin"},{"p":"model.enumeration","l":"CoinFace"},{"p":"model.interfaces","l":"CoinPair"},{"p":"model.interfaces","l":"GameEngine"},{"p":"view.interfaces","l":"GameEngineCallback"},{"p":"model.interfaces","l":"Player"}]

@@ -1,0 +1,4 @@
+heads.jpg from https://commons.wikimedia.org/wiki/File:Specimen_Coin_-_1_Penny,_Australia,_1911_(Obverse).jpg
+tails.jpg from https://commons.wikimedia.org/wiki/File:Proof_Coin_-_1_Penny,_Australia,_1949.jpg
+
+NOTE: Australian coin designs after 1969 are copyright https://www.ramint.gov.au/using-coin-designs
