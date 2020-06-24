@@ -1,0 +1,10 @@
+--------------Help--------------------
+Commands------------------------------
+turn <factorynum> <colourchar> <storage_rownum>: plays turn
+    facotrynum = number of factory to take from
+    colourchar = character of tile you wanna take (down below for conversion)
+    storage_rownum = number of storage row you wanna add tile too
+save: save the current game state to file
+help: shows this screen
+rules: show the game rules (similar to main menu)
+show: asked which player and prints their mosiac board 

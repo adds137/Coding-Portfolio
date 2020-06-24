@@ -1,0 +1,55 @@
+ ---------------------------------------How to play----------------------------------------------
+ Object of the game------------------------------------------------------------------------------
+ To win the game you need to have the most point after
+ the round in which at least 1 player has completed a
+ horizontal line of consecutive different tile on their Board
+
+ Player turn-------------------------------------------------------------------------------------
+ At the start of your turn you will see the factories layout:
+ The Center Factory (0:) which has no size limit, start 'F' tile 
+ The other normal factories with a size of 4, prefilled with tiles 
+
+ You must either: (using 'turn <factorynum> <colourchar> <storage_rownum>')
+ Pick all tiles of the same color from any one Factory display and then move
+ the remaining tiles from this Factory to the center factory (0:)
+
+ Pick all tiles of the same color from the center factory (0:)
+ if you are the first player of the round to pick from center factory
+ you must take the 'F' tile and place it in your broken line
+
+ Storage rows------------------------------------------------------------------------------------
+ You get a certain about of storage row on the left side of your board
+ the size of the storage row vary: Srow 1 has 1 space, Srow 2 has 2 space etc
+ '.' means the storage space is empty 
+
+ after you play your turn and the game take the tile you selected it will try and place
+ all of them into the storage row you selected <storage_rownum>
+ if there is not enough space in the storage row to place all of your selected tiles, the
+ rest will end of in the broken line
+ you cant add a tile to a storage row that is already taken by a different color tile, 
+ etc if the storage from has a blue tile you can add blue tiles until you clear the row
+
+ End round scoring-------------------------------------------------------------------------------
+ Once all factories are empty the round ends
+ the program will find all storage row that are full and add the tile to your board (right-side) 
+ the rest of the tiles in the row (only need one to be added to board) will be discarded 
+
+ you get point based on the location of the new tile
+ if the new tile has nothing connected to it, you get one point 
+ if their are other tiles horizontal and vertical of it you gain points based on how many is connected: 
+
+ you lose pointed based on the amount of broken tiles you have+
+ 0 tiles = 0, 1 tiles = -1, 2 tiles = -2, 3 tiles = -4, 4 tiles = -6, 5 tiles = -8, 6 tiles = -11, 7 tiles = -14
+ storage row gets discarded, standard factory repopulated, 'F' tile placed in center factory, new round starts 
+
+ End game scoring--------------------------------------------------------------------------------
+ The Game end after the round in which at least 1 player has completed a horizontal line of consecutive 
+ different tile on their Board
+
+ the program will grant you bonus point if you achieved certain goals:
+ 2 point for each complete horizontal line 
+ 7 point for each complete vertical line 
+ 10 point for each color of which you placed all 5 tiles of that color on your board 
+
+ P.S type 'help' in game,to be reminded of the commands 
+ ------------------------------------------------------------------------------------------------

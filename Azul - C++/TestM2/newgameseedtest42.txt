@@ -1,0 +1,15 @@
+1
+2
+3
+Test1
+Test2
+Test3
+turn 2 U 2
+1
+turn 1 R 1
+show
+Test2
+turn 8 B 1
+0
+save
+seed42

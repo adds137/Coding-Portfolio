@@ -1,0 +1,12 @@
+1
+Jim
+John
+turn 1 U 2
+turn 5 B 3
+turn 4 B 3
+turn 3 Y 1
+turn 2 R 1
+turn 0 R 2
+turn 0 L 4
+save
+testNewGameSeed21saveFile
