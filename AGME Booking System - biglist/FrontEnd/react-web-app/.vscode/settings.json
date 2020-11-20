@@ -1,0 +1,6 @@
+{
+    "deno.enable": false,
+    "typescript.suggest.paths": false
+
+
+}

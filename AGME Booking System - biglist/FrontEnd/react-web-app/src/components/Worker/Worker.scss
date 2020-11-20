@@ -1,0 +1,79 @@
+.edit-button{
+    margin: 5px 0;
+}
+.stat-val {
+    font-size: 3em;
+    padding-top: 20px;
+    font-weight: bold;
+}
+.section.profile-heading .column.is-2-tablet.has-text-centered + .has-text-centered {
+    border-left: 1px dotted rgba(0, 0, 0, 0.2);
+}
+.column.is-1-tablet.has-text-centered{
+    border-left: 1px dotted rgba(0, 0, 0, 0.2);
+}
+.column.is-2-tablet.has-text-centered{
+    border-left: 1px dotted rgba(0, 0, 0, 0.2);
+}
+
+.container.profile {
+    margin-top: 1%;
+}
+
+.control.is-pulled-left span.select {
+    margin-right: 5px;
+    border-radius: 2px;
+}
+
+.modal-card .content h1 {
+    padding: 40px 10px 10px;
+    border-bottom: 1px solid #dadada;
+}
+
+.container.profile .profile-options .tabs ul li.link a {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #F1F1F1;
+}
+
+.columns .is-mobile{
+    margin: auto;
+}
+
+.day-tag{
+    margin-left: 200px;
+    float: left;
+}
+
+.shifts{
+    margin: auto;
+    text-align: center;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+
+.shift-change-div {
+    margin-bottom: 200px;
+}
+
+.submit-shift {
+    width: 100px; // whatever your button's width
+    margin: 0 auto; // auto left/right margins
+    display: block;
+}
+
+.worker-profile-info {
+    margin: auto;
+    text-align: center;
+}
+
+.worker-name {
+    float:left;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
