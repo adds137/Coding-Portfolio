@@ -1,0 +1,12 @@
+{
+  "httpMethod": "POST",
+  "path": "/file/move",
+  "queryStringParameters": {
+    "limit": "10"
+  },
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJjZjcxNzFjMi0zNDAzLTQ5MDUtYWU0YS1iMmI5MjdmZWQzOTgiLCJmaXJzdF9uYW1lIjoiZ2FyeSIsImxhc3RfbmFtZSI6Imdhcnlzb24iLCJlbWFpbCI6InRlc3QxMjNAZ21haWwuY29tLmF1IiwiYWhwcmFfbnVtIjo5ODc4LCJwcm92aWRlcl9udW0iOm51bGwsInByZXNjcmliZXJfbnVtIjoiMTIzYWJjIiwiaWF0IjoxNjY2NzgwNzg4LCJleHAiOjE2NjY3OTE1ODh9.Yu1gPAKnFxQY7BbTh87vtjwfYV8w1OB1b1KGG414XwU"
+  },
+  "body": "{\"userId\":\"cf7171c2-3403-4905-ae4a-b2b927fed398\",\"originalFile\":\"htaccess\",\"newFileLocation\":\"random/\"}"
+}

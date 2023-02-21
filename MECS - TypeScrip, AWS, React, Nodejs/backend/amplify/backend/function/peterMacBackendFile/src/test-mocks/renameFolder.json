@@ -1,0 +1,13 @@
+{
+    "httpMethod": "POST",
+    "path": "/file/rename-folder",
+    "queryStringParameters": {
+      "limit": "10"
+    },
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiIwMTU2ZDI2My1kMmIyLTQ5N2MtYTcxZC01ZjA0ZDM2ZmMyYjMiLCJmaXJzdF9uYW1lIjoidGVzdCIsImxhc3RfbmFtZSI6InRlc3QiLCJlbWFpbCI6ImRlbW9AZ21haWwuY29tIiwiYWhwcmFfbnVtIjpudWxsLCJwcm92aWRlcl9udW0iOm51bGwsInByZXNjcmliZXJfbnVtIjpudWxsLCJpYXQiOjE2NjY2MTAxNjgsImV4cCI6MTY2NjYyMDk2OH0.-MX3icdY9z3R0fyL0_9zwq7Z_tQWn9YOt9P0kOVi5Z4"
+    },
+    "body": "{\"userId\":\"0156d263-d2b2-497c-a71d-5f04d36fc2b3\",\"oldFolderPath\":\"0156d263-d2b2-497c-a71d-5f04d36fc2b3/test/abc/\",\"newFolderName\":\"def\"}"
+  }
+  

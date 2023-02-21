@@ -1,0 +1,559 @@
+{
+	"info": {
+		"_postman_id": "984d2239-9f04-4f35-bee2-0cbc66c16c75",
+		"name": "peter-mac-web-app-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12171401"
+	},
+	"item": [
+		{
+			"name": "health",
+			"item": [
+				{
+					"name": "health check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/health",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"gary\",\r\n    \"lastname\": \"garyson\",\r\n    \"email\": \"test123@gmail.com.au\",\r\n    \"password\": \"donttell\",\r\n    \"ahpra_num\": \"9878\",\r\n    \"provider_num\": \"456123\",\r\n    \"prescriber_num\": \"123abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/User",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"newuser@gmail.com.au\",\r\n    \"password\": \"donttell\",\r\n    \"ahpra_num\": \"MED9878\",\r\n    \"provider_num\": \"pid456123\",\r\n    \"prescriber_num\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/User/a119f1e7-7b40-4e15-8289-5eedc7cec20b",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"User",
+								"a119f1e7-7b40-4e15-8289-5eedc7cec20b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/User/588424c8-928c-419b-a212-2fd8653ac314",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"User",
+								"588424c8-928c-419b-a212-2fd8653ac314"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"newuser@gmail.com.au\",\r\n    \"password\": \"donttell\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/User/login",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"User",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "file",
+			"item": [
+				{
+					"name": "list Files",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/File/list/592a5ba3-b739-48e5-ae6b-5b7b20a43671?path=inner folder",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"File",
+								"list",
+								"592a5ba3-b739-48e5-ae6b-5b7b20a43671"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "inner folder"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Folder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJhODQxYjVkNi05YWQ4LTQ0YzctODU4NC1kM2IxM2ZmNDEyMmYiLCJmaXJzdF9uYW1lIjoiRGVtbyIsImxhc3RfbmFtZSI6IkFjY291bnQiLCJlbWFpbCI6ImRlbW9AYWNjb3VudC5jb20iLCJpYXQiOjE2NjM2ODU2MzUsImV4cCI6MTY2MzY5NjQzNX0.pGuPFRwo0mT7P3UQ1Q__XfyKQARli1qncd0Dq3KQh_M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"a841b5d6-9ad8-44c7-8584-d3b13ff4122f\",\r\n    \"path\": \"postmanFolder\",\r\n    \"folderName\": \"postmanfolderv2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/File/folder",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"File",
+								"folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "move File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJkNzRmMzNjNy03ZWRiLTRhY2QtODRmOS1lYTU1NTMwZjIwY2UiLCJmaXJzdF9uYW1lIjoidGVzdHVzZXIiLCJsYXN0X25hbWUiOiJmdW5jVGVzdCIsImVtYWlsIjoidGVzdHVzZXItZnVuY3Rlc3RAZ21haWwuY29tLmF1IiwiYWhwcmFfbnVtIjoiTUVENDU2IiwicHJvdmlkZXJfbnVtIjoicGlkMTIzIiwicHJlc2NyaWJlcl9udW0iOiIxMzQ2NzkiLCJpYXQiOjE2Njc0NjUyOTIsImV4cCI6MTY2NzQ3NjA5Mn0.9I9Nsf52vw0fb084KnqwbnYX1nExcwxxPxBEYynd92M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"d74f33c7-7edb-4acd-84f9-ea55530f20ce\",\r\n    \"originalFile\": \"test-file.pdf\",\r\n    \"newFileLocation\": \"random/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/File/move",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"File",
+								"move"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rename File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI3NTkxYTYwZi0yNzNmLTQ3OTktYTI1Ny02NTkzMWQ0NzBjOWMiLCJmaXJzdF9uYW1lIjoidGVzdHVzZXIiLCJsYXN0X25hbWUiOiJmdW5jVGVzdCIsImVtYWlsIjoidGVzdHVzZXItZnVuY3Rlc3RAZ21haWwuY29tLmF1IiwiYWhwcmFfbnVtIjoiTUVENDU2IiwicHJvdmlkZXJfbnVtIjoicGlkMTIzIiwicHJlc2NyaWJlcl9udW0iOiIxMzQ2NzkiLCJpYXQiOjE2Njc0Njc0NjIsImV4cCI6MTY2NzQ3ODI2Mn0.L9jmb5dYh1GBi0L-wysp3b_NCL7PYVKhe63KGuJ3lxs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"7591a60f-273f-4799-a257-65931d470c9c\",\r\n    \"oldFilePath\": \"7591a60f-273f-4799-a257-65931d470c9c/test-photo.JPG\",\r\n    \"newFileName\": \"updatetest-photo.pdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/File/rename-file",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"File",
+								"rename-file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rename folder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiIyNzJlZWFkMy0zYWEzLTQxZGYtOGNiZS00OTIyYzdkZjVmNGMiLCJmaXJzdF9uYW1lIjoidGVzdHVzZXIiLCJsYXN0X25hbWUiOiJmdW5jVGVzdCIsImVtYWlsIjoidGVzdHVzZXItZnVuY3Rlc3RAZ21haWwuY29tLmF1IiwiYWhwcmFfbnVtIjoiTUVENDU2IiwicHJvdmlkZXJfbnVtIjoicGlkMTIzIiwicHJlc2NyaWJlcl9udW0iOiIxMzQ2NzkiLCJpYXQiOjE2Njc0NjgyMDYsImV4cCI6MTY2NzQ3OTAwNn0.qeKmHGvA93wJIdhLqjlHMSsQtuFwxvMfH7JdxW6QWdw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"272eead3-3aa3-41df-8cbe-4922c7df5f4c\",\r\n    \"oldFolderPath\": \"272eead3-3aa3-41df-8cbe-4922c7df5f4c/test-folder1/updatedtest-folder2\",\r\n    \"newFolderName\": \"updatedv2test-folder2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/File/rename-folder",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"File",
+								"rename-folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload File WIP",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "userId",
+								"value": "7a834cc7-dbbf-447a-84fe-7f70b5dc7c6a",
+								"type": "text"
+							},
+							{
+								"key": "path",
+								"value": "test-folder",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/u/Downloads/2022 Lecture 8 V1.0.pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/File/upload",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"File",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete File",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/File/delete/d36e4682-6ed5-4c20-887c-bb45fd6d08a2?path=test-folder/capture.JPG",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"File",
+								"delete",
+								"d36e4682-6ed5-4c20-887c-bb45fd6d08a2"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "test-folder/capture.JPG"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Folder",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/File/delete-folder/ad16c8b5-b550-4702-b05d-292782f66bdb?path=test/",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"File",
+								"delete-folder",
+								"ad16c8b5-b550-4702-b05d-292782f66bdb"
+							],
+							"query": [
+								{
+									"key": "path",
+									"value": "test/"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "email",
+			"item": [
+				{
+					"name": "post email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"7a834cc7-dbbf-447a-84fe-7f70b5dc7c6a\",\r\n    \"toEmail\": \"tomail@hotmail.com\",\r\n    \"toName\": \"gary\",\r\n    \"fromEmail\": \"fromMail@yahoo.com.au\",\r\n    \"fromName\": \"steve\",\r\n    \"message\": \"wow hope working\",\r\n    \"certificate\": [\r\n        {\r\n            \"name\": \"cert-name\",\r\n            \"link\": \"cert-link\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging/email",
+							"protocol": "https",
+							"host": [
+								"9xgzyeg1c1",
+								"execute-api",
+								"ap-southeast-2",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"staging",
+								"email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJkNWIyMjRhZS1jMTI4LTQ3NTItYTdjOS0xMTZiODY2YWQ3ZGQiLCJmaXJzdF9uYW1lIjoidGVzdHVzZXIiLCJsYXN0X25hbWUiOiJmdW5jVGVzdCIsImVtYWlsIjoidGVzdHVzZXItZnVuY3Rlc3RAZ21haWwuY29tLmF1IiwiYWhwcmFfbnVtIjoiTUVEMTIzIiwicHJvdmlkZXJfbnVtIjoicGlkNTY3OCIsInByZXNjcmliZXJfbnVtIjoiMjQ2OCIsImlhdCI6MTY2NzAzODI3MCwiZXhwIjoxNjY3MDQ5MDcwfQ.uw8xNMXnxajX65CKqO_h7taaRWGh6p6lfyYgQ-_r_Ik",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

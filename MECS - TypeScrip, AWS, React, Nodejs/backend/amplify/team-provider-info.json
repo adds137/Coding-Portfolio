@@ -1,0 +1,35 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify8b64519aa5804-staging-103204-authRole",
+      "UnauthRoleArn": "arn:aws:iam::661213788024:role/amplify-amplify8b64519aa5804-staging-103204-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::661213788024:role/amplify-amplify8b64519aa5804-staging-103204-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-amplify8b64519aa5804-staging-103204-deployment",
+      "UnauthRoleName": "amplify-amplify8b64519aa5804-staging-103204-unauthRole",
+      "StackName": "amplify-amplify8b64519aa5804-staging-103204",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:661213788024:stack/amplify-amplify8b64519aa5804-staging-103204/ac0337a0-1d4e-11ed-bdd6-0602c1beb0fc",
+      "AmplifyAppId": "d3313yaw6v22vl"
+    },
+    "categories": {
+      "function": {
+        "peterMacBackendUser": {
+          "deploymentBucketName": "amplify-amplify8b64519aa5804-staging-103204-deployment",
+          "s3Key": "amplify-builds/peterMacBackendUser-427233554d794e783777-build.zip"
+        },
+        "peterMacBackendHealth": {
+          "deploymentBucketName": "amplify-amplify8b64519aa5804-staging-103204-deployment",
+          "s3Key": "amplify-builds/peterMacBackendHealth-6435436e373868754776-build.zip"
+        },
+        "peterMacBackendFile": {
+          "deploymentBucketName": "amplify-amplify8b64519aa5804-staging-103204-deployment",
+          "s3Key": "amplify-builds/peterMacBackendFile-4d334755706950766542-build.zip"
+        },
+        "peterMacBackendEmail": {
+          "deploymentBucketName": "amplify-amplify8b64519aa5804-staging-103204-deployment",
+          "s3Key": "amplify-builds/peterMacBackendEmail-5169327652697474324c-build.zip"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "httpMethod": "POST",
+  "path": "/user",
+  "queryStringParameters": {
+    "limit": "10"
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"firstname\":\"testuser\",\"lastname\":\"testsurname\",\"email\":\"johnsmith@gmail.com\",\"password\":\"letmein\",\"ahpra_num\": 9878 ,\"prescriber_num\":\"123abc\"}"
+}

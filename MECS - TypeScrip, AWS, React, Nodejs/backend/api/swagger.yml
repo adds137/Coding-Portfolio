@@ -1,0 +1,900 @@
+openapi: 3.0.0
+info:
+  version: "v1.0"
+  title: PeterMac web app API
+  description: Backend API for the certificate management web app
+servers:
+  - url: https://9xgzyeg1c1.execute-api.ap-southeast-2.amazonaws.com/staging
+paths:
+  /User:
+    post:
+      description: Register new user to the web app and add their details to the database
+      summary: PostUser
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUserResponse'
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostUserRequest'
+      tags:
+        - User
+  /User/{userId}:
+    patch:
+      description: update user details
+      summary: PatchUser
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchUserResponse'
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: "missing credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: "invalid credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchUserRequest'
+      parameters:
+        - in: header
+          name: accessToken
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: ID of user
+      security:
+        - accessToken: []
+      tags:
+        - User
+    delete:
+      description: delete user from database and s3
+      summary: delete user
+      responses:
+        '204':
+          description: no content
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: "missing credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: "invalid credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+        - in: header
+          name: accessToken
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: ID of user 
+      security:
+      - accessToken: []
+      tags:
+      - User
+  /User/login:
+    post:
+      description: Check Users table and valid email and password for login
+      summary: PostUserLogin
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUserLoginResponse'
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostUserLoginRequest'
+      tags:
+        - User    
+  /File/list/{userId}:
+    get:
+      description: list all files and folders at a given path
+      summary: ListFiles
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListFileResponse'
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: "missing credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: "invalid credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+        - in: header
+          name: accessToken
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: ID of user 
+        - in: query
+          name: path
+          schema:
+            type: string
+          required: false
+          description: relative path to list from
+      security:
+        - accessToken: []
+      tags:
+        - File
+  /File/upload:
+    post:
+      description: upload a file to a provided location WIP CURRENT DOES NOT WORK DUE TO UTF-8 ISSUE
+      summary: upload file WIP
+      responses:
+        '204':
+          description: no content
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: "missing credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: "invalid credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PostUploadFileRequest'
+      parameters:
+        - in: header
+          name: accessToken
+          schema:
+            type: string
+          required: true
+        - in: header
+          name: userId
+          schema:
+            type: string
+          required: true
+        - in: header
+          name: path
+          schema:
+            type: string
+          required: false
+      security:
+        - accessToken: []
+      tags:
+        - File
+  /File/folder:
+    post:
+      description: create new folder at given paths
+      summary: Post folder
+      responses:
+        '204':
+          description: no content
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: "missing credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: "invalid credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostFolderRequest'
+      parameters:
+        - in: header
+          name: accessToken
+          schema:
+            type: string
+          required: true
+      security:
+      - accessToken: []
+      tags:
+      - File
+  /email:
+    post:
+      description: send email with the given information
+      summary: send email
+      responses:
+        '204':
+          description: no content
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: "missing credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: "invalid credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostEmailRequest'
+      parameters:
+        - in: header
+          name: accessToken
+          schema:
+            type: string
+          required: true
+      security:
+      - accessToken: []
+      tags:
+      - Email
+  /File/delete/{userId}:
+    delete:
+      description: delete file from given location
+      summary: delete file
+      responses:
+        '204':
+          description: no content
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: "missing credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: "invalid credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+        - in: header
+          name: accessToken
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: ID of user 
+        - in: query
+          name: path
+          schema:
+            type: string
+          required: false
+          description: relative path to file
+      security:
+      - accessToken: []
+      tags:
+      - File
+  /File/delete-folder/{userId}:
+    delete:
+      description: delete folder at given location
+      summary: delete folder
+      responses:
+        '204':
+          description: no content
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: "missing credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: "invalid credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+        - in: header
+          name: accessToken
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: ID of user 
+        - in: query
+          name: path
+          schema:
+            type: string
+          required: false
+          description: relative path to folder
+      security:
+      - accessToken: []
+      tags:
+      - File
+  /File/move:
+    post:
+      description: move file from one location to another
+      summary: move file
+      responses:
+        '204':
+          description: no content
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: "missing credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: "invalid credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostMoveFileRequest'
+      parameters:
+        - in: header
+          name: accessToken
+          schema:
+            type: string
+          required: true
+      security:
+      - accessToken: []
+      tags:
+      - File
+  /File/rename-file:
+    post:
+      description: rename a given file
+      summary: rename file
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostRenameFileResponse'
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: "missing credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: "invalid credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRenameFileRequest'
+      parameters:
+        - in: header
+          name: accessToken
+          schema:
+            type: string
+          required: true
+      security:
+      - accessToken: []
+      tags:
+      - File
+  /File/rename-folder:
+    post:
+      description: rename a given folder
+      summary: rename folder
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostRenameFolderResponse'
+        '400':
+          description: "bad request"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: "missing credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: "invalid credential"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: "internal server error"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRenameFolderRequest'
+      parameters:
+        - in: header
+          name: accessToken
+          schema:
+            type: string
+          required: true
+      security:
+      - accessToken: []
+      tags:
+      - File
+components:
+  securitySchemes:
+    accessToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    validationErrorItem:
+      properties:
+        values:
+          type: string
+        msg: 
+          type: string
+        param:
+          type: string
+        location:
+          type: string
+      type: object
+      additionalProperties: false
+    ValidationError:
+      properties:
+        errors:
+            items:
+              $ref: '#/components/schemas/validationErrorItem'
+            type: array
+    Error:
+      properties:
+        error:
+          type: string
+    PostUserLoginRequest:
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      required:
+        - email
+        - password
+      type: object
+      additionalProperties: false
+    PostFolderRequest:
+      properties:
+        userId:
+          type: string
+        path:
+          type: string
+        folderName:
+          type: string
+      required:
+        - userId
+        - folderName
+      type: object
+      additionalProperties: false
+    PostUploadFileRequest:
+      type: object
+      properties:
+        file:
+          type: string
+          format: byte
+      required:
+        - file
+    PostUserRequest:
+      properties:
+        firstname:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        ahpra_num:
+          type: string
+        provider_num:
+          type: string
+        prescriber_num:
+          type: string
+      required:
+        - firstname
+        - lastname
+        - email
+        - password
+      type: object
+      additionalProperties: false
+    PostUserLoginResponse:
+      properties:
+        loginOutcome:
+          type: boolean
+        accessToken:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      required:
+        - loginOutcome
+        - email
+        - password
+      type: object
+      additionalProperties: false
+    PatchUserRequest:
+      properties:
+        firstname:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        ahpra_num:
+          type: string
+        provider_num:
+          type: string
+        prescriber_num:
+          type: string
+      type: object
+    PatchUserResponse:
+      properties:
+        updateOutcome:
+          type: boolean
+        newAccessToken:
+          type: string
+      required:
+        - updateOutcome
+      type: object
+      additionalProperties: false
+    PostUserResponse:
+      properties:
+        accessToken:
+          type: string
+      required:
+        - accessToken
+      type: object
+      additionalProperties: false
+    PostRenameFileResponse:
+      properties:
+        msg:
+          type: string
+      required:
+        - msg
+      type: object
+      additionalProperties: false
+    PostRenameFolderResponse:
+      properties:
+        msg:
+          type: string
+      required:
+        - msg
+      type: object
+      additionalProperties: false
+    ListFileResponse:
+      properties:
+        list:
+          type: array
+          items:
+            $ref: '#/components/schemas/Object'
+      required:
+        - list
+      additionalProperties: false
+      type: object
+    Object:
+      properties:
+        name:
+          type: string
+        objectType:
+          type: string
+        fileType:
+          type: string
+        key:
+          type: string
+        lastModified:
+          type: string
+        eTag:
+          type: string
+        url:
+          type: string
+      required:
+        - name
+        - objectType
+        - key
+        - lastModified
+        - eTag
+      additionalProperties: false
+      type: object   
+    PostEmailRequest:
+      properties:
+        userId:
+          type: string
+        toEmail:
+          type: string
+        toName:
+          type: string
+        fromEmail:
+          type: string
+        fromName:
+          type: string
+        message:
+          type: string
+        certificate:
+          type: array
+          items:
+            $ref: '#/components/schemas/certificateInfo'
+      required:
+        - userId
+      additionalProperties: false
+      type: object
+    PostMoveFileRequest:
+      properties:
+        userId:
+          type: string
+        originalFile:
+          type: string
+        newFileLocation:
+          type: string
+      required:
+        - userId
+        - originalFile
+      additionalProperties: false
+      type: object
+    PostRenameFileRequest:
+      properties:
+        userId:
+          type: string
+        oldFilePath:
+          type: string
+        newFileName:
+          type: string
+      required:
+        - userId
+        - oldFilePath
+        - newFileName
+      additionalProperties: false
+      type: object
+    PostRenameFolderRequest:
+      properties:
+        userId:
+          type: string
+        oldFolderPath:
+          type: string
+        newFolderName:
+          type: string
+      required:
+        - userId
+        - oldFolderPath
+        - newFolderName
+      additionalProperties: false
+      type: object
+    certificateInfo:
+      properties:
+        name:
+          type: string
+        link:
+          type: string
+      required:
+        - name
+        - link
+      additionalProperties: false
+      type: object

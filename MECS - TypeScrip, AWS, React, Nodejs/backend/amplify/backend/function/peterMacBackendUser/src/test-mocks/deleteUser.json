@@ -1,0 +1,11 @@
+{
+  "httpMethod": "DELETE",
+  "path": "/user/bca46dff-cf6f-4c36-887d-5d76eb76b633",
+  "queryStringParameters": {
+    "limit": "10"
+  },
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJiY2E0NmRmZi1jZjZmLTRjMzYtODg3ZC01ZDc2ZWI3NmI2MzMiLCJmaXJzdF9uYW1lIjoiZHMiLCJsYXN0X25hbWUiOiJhc2RmIiwiZW1haWwiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTY2NTU2MzY3MywiZXhwIjoxNjY1NTc0NDczfQ.CwbTAQtgPZl3BLHNXPnYlzQM-gComGf3Ixyvxm6o5gs"
+  }
+}

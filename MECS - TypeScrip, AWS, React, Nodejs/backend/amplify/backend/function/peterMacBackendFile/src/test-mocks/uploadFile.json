@@ -1,0 +1,22 @@
+{
+  "httpMethod": "POST",
+  "path": "/file/upload",
+  "queryStringParameters": {
+    "limit": "10"
+  },
+  "headers": {
+    "Content-Type": "application/json",
+    "userId": "592a5ba3-b739-48e5-ae6b-5b7b20a43671",
+    "path": "inner folder",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI1OTJhNWJhMy1iNzM5LTQ4ZTUtYWU2Yi01YjdiMjBhNDM2NzEiLCJmaXJzdF9uYW1lIjoic3ByaW50MiIsImxhc3RfbmFtZSI6InVzZXJzIiwiZW1haWwiOiJzcHJpbnQyQGdtYWlsLmNvbS5hdSIsImlhdCI6MTY2Mjc5NDY1NywiZXhwIjoxNjYyODA1NDU3fQ.8n0brnAVdLG6pMtPg0RUAFhLiLYjVJD8FYJGfk7F2dc"
+  },
+  "formData": {
+    "file": {
+      "value": "",
+      "options": {
+        "filename": "",
+        "contentType": null
+      }
+    }
+  }
+}

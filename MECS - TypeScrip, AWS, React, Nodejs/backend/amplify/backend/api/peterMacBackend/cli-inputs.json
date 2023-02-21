@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "paths": {
+    "/User": {
+      "name": "/User",
+      "lambdaFunction": "peterMacBackendUser",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/health": {
+      "name": "/health",
+      "lambdaFunction": "peterMacBackendHealth",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/File": {
+      "name": "/File",
+      "lambdaFunction": "peterMacBackendFile",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/email": {
+      "name": "/email",
+      "lambdaFunction": "peterMacBackendEmail",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

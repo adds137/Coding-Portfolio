@@ -1,0 +1,12 @@
+{
+  "httpMethod": "PATCH",
+  "path": "/user/b8660263-9858-4c74-a832-c3dcbf9f9414",
+  "queryStringParameters": {
+    "limit": "10"
+  },
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJiODY2MDI2My05ODU4LTRjNzQtYTgzMi1jM2RjYmY5Zjk0MTQiLCJmaXJzdF9uYW1lIjoidGVzdHVzZXIiLCJsYXN0X25hbWUiOiJ0ZXN0c3VybmFtZSIsImVtYWlsIjoiam9obnNtaXRoQGdtYWlsLmNvbSIsImlhdCI6MTY2NTQ5Njg2MywiZXhwIjoxNjY1NTA3NjYzfQ.RL8hXHl9Nd5QPT5M977iC5WXCH0mfjmHQrEDfe6I-YM"
+  },
+  "body": "{\"email\":\"johnsmith6@gmail.com\",\"password\":\"letmein\",\"ahpra_num\": 9878 ,\"prescriber_num\":\"123abc\"}"
+}

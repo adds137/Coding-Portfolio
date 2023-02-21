@@ -1,0 +1,12 @@
+{
+  "httpMethod": "DELETE",
+  "path": "/file/delete/d36e4682-6ed5-4c20-887c-bb45fd6d08a2",
+  "queryStringParameters": {
+    "limit": "10",
+    "path": "test-folderv2/"
+  },
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJkMzZlNDY4Mi02ZWQ1LTRjMjAtODg3Yy1iYjQ1ZmQ2ZDA4YTIiLCJmaXJzdF9uYW1lIjoidGVzdDEiLCJsYXN0X25hbWUiOiJ1c2VyMSIsImVtYWlsIjoiam9obnNtaXRoQGdtYWlsLmNvbSIsImlhdCI6MTY2NTAyMzc3NiwiZXhwIjoxNjY1MDM0NTc2fQ.xVtfz1JnjCy1kw47Tq_f5QpVhDseC0wk2jjYchDxDGw"
+  }
+}

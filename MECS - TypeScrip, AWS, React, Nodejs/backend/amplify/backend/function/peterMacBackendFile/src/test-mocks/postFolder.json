@@ -1,0 +1,12 @@
+{
+  "httpMethod": "POST",
+  "path": "/file/folder",
+  "queryStringParameters": {
+    "limit": "10"
+  },
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI3YTgzNGNjNy1kYmJmLTQ0N2EtODRmZS03ZjcwYjVkYzdjNmEiLCJmaXJzdF9uYW1lIjoidGVzdC11c2VyLXMzIiwibGFzdF9uYW1lIjoid293IiwiZW1haWwiOiJib3JlZGFmQGdtYWlsLmNvbS5hdSIsImlhdCI6MTY2NDE4OTM1NiwiZXhwIjoxNjY0MjAwMTU2fQ.r1FTn6egd3QCSM8xPucpGhfiVGnJ-3J6i8iG0jnFD0s"
+  },
+  "body": "{\"userId\":\"7a834cc7-dbbf-447a-84fe-7f70b5dc7c6a\",\"path\":\"working-folder/working-folderv2\",\"folderName\":\"working-folderv3\"}"
+}

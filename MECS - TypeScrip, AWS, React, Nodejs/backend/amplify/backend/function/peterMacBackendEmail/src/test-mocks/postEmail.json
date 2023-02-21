@@ -1,0 +1,12 @@
+{
+  "httpMethod": "POST",
+  "path": "/email",
+  "queryStringParameters": {
+    "limit": "10"
+  },
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI3YTgzNGNjNy1kYmJmLTQ0N2EtODRmZS03ZjcwYjVkYzdjNmEiLCJmaXJzdF9uYW1lIjoidGVzdC11c2VyLXMzIiwibGFzdF9uYW1lIjoid293IiwiZW1haWwiOiJib3JlZGFmQGdtYWlsLmNvbS5hdSIsImlhdCI6MTY2NDM2MjcwOCwiZXhwIjoxNjY0MzczNTA4fQ.DCM1oT3_rXf_PuOHV0KLYG4xfORzxZoZxCMWNNooz9Y"
+  },
+  "body": "{\"userId\":\"7a834cc7-dbbf-447a-84fe-7f70b5dc7c6a\",\"toEmail\":\"wow123@yahoo.com.au\",\"toName\":\"gary\",\"fromEmail\":\"wow123456@hotmail.com\",\"fromName\":\"s3721092\",\"message\":\"test-message\",\"certificate\":\"[{name: 'testname', link: 'test-link'}]\"}"
+}

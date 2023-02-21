@@ -1,0 +1,41 @@
+{
+  "name": "peter-mac-web-app-backend",
+  "version": "1.0.0",
+  "description": "REST API backend service for PeterMac web application",
+  "scripts": {
+    "amplify:install": "npm install -g @aws-amplify/cli",
+    "amplify:start-dev": "amplify pull --appId d3313yaw6v22vl --envName staging",
+    "amplify:build": "amplify function build",
+    "amplify:test-user/login": "amplify mock function peterMacBackendUser --event src/test-mocks/postLogin.json",
+    "amplify:test-user/delete": "amplify mock function peterMacBackendUser --event src/test-mocks/deleteUser.json",
+    "amplify:test-file/list": "amplify mock function peterMacBackendFile --event src/test-mocks/listFiles.json",
+    "amplify:test-file/upload": "amplify mock function peterMacBackendFile --event src/test-mocks/uploadFile.json",
+    "amplify:test-file/folder": "amplify mock function peterMacBackendFile --event src/test-mocks/postFolder.json",
+    "amplify:test-file/delete": "amplify mock function peterMacBackendFile --event src/test-mocks/deleteFile-Folder.json",
+    "amplify:test-file/delete-folder": "amplify mock function peterMacBackendFile --event src/test-mocks/deleteFolder.json",
+    "amplify:test-file/rename-file": "amplify mock function peterMacBackendFile --event src/test-mocks/renameFile.json",
+    "amplify:test-file/rename-folder": "amplify mock function peterMacBackendFile --event src/test-mocks/renameFolder.json",
+    "amplify:test-file/move": "amplify mock function peterMacBackendFile --event src/test-mocks/postMoveFile.json",
+    "amplify:test-user": "amplify mock function peterMacBackendUser --event src/test-mocks/postNewUser.json",
+    "amplify:test-patch-user": "amplify mock function peterMacBackendUser --event src/test-mocks/patchUser.json",
+    "amplify:test-health": "amplify mock function peterMacBackendHealth --event src/event.json",
+    "amplify:test-email": "amplify mock function peterMacBackendEmail --event src/test-mocks/postEmail.json",
+    "amplify:pull": "amplify pull",
+    "amplify:push": "amplify push",
+    "amplify:push:force": "amplify push --force",
+    "amplify:api": "amplify api update",
+    "terraform:deploy": "terraform apply",
+    "terraform:setup": "terraform init",
+    "terraform:plan": "terraform plan",
+    "test": "jest"
+  },
+  "author": "PeterMacTeam",
+  "license": "ISC",
+  "devDependencies": {
+    "aws-sdk": "^2.1241.0",
+    "axios": "^1.1.3",
+    "fs": "^0.0.1-security",
+    "jest": "^29.2.2",
+    "pg": "^8.8.0"
+  }
+}

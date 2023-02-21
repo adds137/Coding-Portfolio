@@ -1,0 +1,84 @@
+.changeDetailsForm{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.btn-cancel{
+    display:block;
+    float: right;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #ffffff;
+    border: 2px solid rgb(225, 225, 225);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    transition: all 250ms;
+}
+    
+.btn-cancel:hover, .btn-cancel:focus {
+    border: 2px solid rgb(238, 238, 238);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+    
+.btn-cancel:hover {
+    transform: translateY(-1px);
+}
+    
+.btn-cancel:active {
+    background-color: #faf8f8;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+}
+
+.delete-account{
+    display:block;
+    margin-left: 1vh;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: #dc4848;
+    border: 2px solid rgb(225, 225, 225);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    transition: all 250ms;
+}
+
+.delete-account:hover, .delete-account:focus {
+    border: 2px solid rgb(255, 11, 11);
+    background-color:#ff0000;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+    
+.delete-account:hover {
+    transform: translateY(-1px);
+}
+    
+.delete-account:active {
+    background-color: #ff0000;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+}

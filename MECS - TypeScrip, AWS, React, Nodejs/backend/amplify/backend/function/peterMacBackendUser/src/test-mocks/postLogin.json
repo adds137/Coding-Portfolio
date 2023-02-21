@@ -1,0 +1,11 @@
+{
+    "httpMethod": "POST",
+    "path": "/user/login",
+    "queryStringParameters": {
+        "limit": "10"
+    },
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "body": "{\"email\":\"newuser@gmail.com.au\",\"password\":\"donttell\"}"
+}
